@@ -1,3 +1,4 @@
+// package Questions;
 public class TrappedWater {
     public static int trapRainWater(int[] height) {
         int n = height.length;

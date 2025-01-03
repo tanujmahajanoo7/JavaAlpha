@@ -5,6 +5,7 @@ public class DecimaltoBinary {
         Scanner sc = new Scanner(System.in);
         int dec = sc.nextInt();
         dectoBinary(dec);
+        sc.close();
     }
 
     public static void dectoBinary(int n){

@@ -57,6 +57,7 @@ public class TwoDArray {
                 matrix[i][j] = sc.nextInt();
             }
         }
+        sc.close();
     }
 
     public static void main(String[] args) {

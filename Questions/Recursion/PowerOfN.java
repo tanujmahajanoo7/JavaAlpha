@@ -6,7 +6,7 @@ public class PowerOfN {
     }
 
     public static void main(String[] args) {
-        System.out.println(powofN(2, 10));
-        // 1024
+        System.out.println(powofN(2, 4));
+        // 16
     }
 }

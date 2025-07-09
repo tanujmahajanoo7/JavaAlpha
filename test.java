@@ -3,4 +3,10 @@
 // }
 // }
 
-// // folder 22.6
+// // folder 22.8
+
+class test {
+    public static void main(String[] args) {
+
+    }
+}

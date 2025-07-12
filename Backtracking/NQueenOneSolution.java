@@ -1,9 +1,4 @@
-// Types of questions
-// 1.All solutions
-// 2.Yes/No
-// 3.Count solutions
-
-public class NQueen {
+public class NQueenOneSolution {
     public static boolean isSafe(char board[][], int row, int col) {
         // vertically up
         for (int i = row - 1; i >= 0; i--) {
@@ -28,22 +23,24 @@ public class NQueen {
 
     static int count = 0;
 
-    public static void nQueen(char board[][], int row) {
+    public static boolean nQueen(char board[][], int row) {
         // base case
         if (row == board.length) {
-            printBoard(board);
             count++;
-            return;
+            return true;
         }
 
         // column loop
         for (int j = 0; j < board.length; j++) {
             if (isSafe(board, row, j)) {
                 board[row][j] = 'Q';
-                nQueen(board, row + 1); // function call
+                if (nQueen(board, row + 1)) {
+                    return true;
+                } // function call
                 board[row][j] = '.'; // backtracking step
             }
         }
+        return false;
     }
 
     public static void printBoard(char board[][]) {
@@ -58,7 +55,7 @@ public class NQueen {
     }
 
     public static void main(String[] args) {
-        int n = 2;
+        int n = 4;
         char board[][] = new char[n][n];
 
         for (int i = 0; i < n; i++) {
@@ -67,7 +64,11 @@ public class NQueen {
             }
         }
 
-        nQueen(board, 0);
-        System.out.println("Total Ways :- " + count);
+        if (nQueen(board, 0)) {
+            System.out.println("Solution is possible");
+            printBoard(board);
+        } else {
+            System.out.println("Solution is not possible");
+        }
     }
 }

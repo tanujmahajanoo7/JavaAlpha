@@ -1,6 +1,8 @@
 // Find number of ways to reach from (0,0) to (n-1,m-1) int nXm grid.
 // Allow moves right and down
 public class GridWays {
+
+    // Exponential Time complexity
     public static int gridWays(int i, int j, int n, int m) {
         // base case
         if (i == n - 1 && j == m - 1) {
@@ -23,3 +25,4 @@ public class GridWays {
 // ways
 // Note :- This grid start from top left corner(0,0)
 // Time complexity 2^(n+m)
+// Linear Time complexity by maths formula ((n-1 + m-1)! / ((n-1)! (m-1)!))

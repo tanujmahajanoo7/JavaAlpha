@@ -1,4 +1,4 @@
-package Recursion;
+// package Recursion;
 
 public class IncreasingOrderNo {
     public static void printIncreasing(int n) {

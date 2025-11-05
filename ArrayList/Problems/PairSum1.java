@@ -5,7 +5,7 @@
 
 import java.util.ArrayList;
 
-public class TargetSum {
+public class PairSum1 {
     //Brute Force
     public static boolean pairSum1(ArrayList<Integer> list, int target) {
         for(int i=0;i<list.size();i++) {

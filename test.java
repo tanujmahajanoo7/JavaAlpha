@@ -1,5 +1,6 @@
-// folder 24.2
+// folder 24.4
 class test {
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
+
     }
 }

@@ -13,6 +13,7 @@ public class LinkedList {
     }
     public static Node head;
     public static Node tail;
+    public static int size;
 
     // Time Complexity O(1)
     public void addFirst(int data) {
@@ -74,6 +75,22 @@ public class LinkedList {
         temp.next=newNode;
     }
 
+    public int removeFirst() {
+        if(size == 0) {
+            System.out.println("LinkedList is empty");
+            return Integer.MIN_VALUE;
+        } else if(size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();   
         ll.print();
@@ -86,6 +103,8 @@ public class LinkedList {
         ll.addLast(4);
         ll.print();
         ll.add(2,9);
+        ll.print();
+        ll.removeFirst();
         ll.print();
 
         // System.out.println(ll);

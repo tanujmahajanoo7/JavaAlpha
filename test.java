@@ -1,4 +1,4 @@
-// folder 24.6
+// folder 24.7
 class test {
     public static void main(String[] args) {        
 

@@ -21,6 +21,7 @@ public class LinkedList {
         Node newNode = new Node(data);
         if(head == null) {
             head = tail = newNode;
+            size++;
             return;
         }
 
@@ -29,6 +30,7 @@ public class LinkedList {
 
         //3.head = newNode
         head = newNode;
+        size++;
     }
 
     // Time Complexity O(n)
@@ -36,10 +38,12 @@ public class LinkedList {
         Node newNode = new Node(data);
         if(head == null) {
             head = tail = newNode;
+            size++;
             return;
         }
         tail.next = newNode;
         tail = newNode;
+        size++;
     }
 
     // Time Complexity O(n)
@@ -60,6 +64,7 @@ public class LinkedList {
     public void add(int index, int data) {
         if(index == 0) {
             addFirst(data);
+            size++;
             return;
         }
         Node newNode = new Node(data);
@@ -73,6 +78,7 @@ public class LinkedList {
         // i=index-1; temp -> prev
         newNode.next = temp.next;
         temp.next=newNode;
+        size++;
     }
 
     public int removeFirst() {
@@ -91,6 +97,28 @@ public class LinkedList {
         return val;
     }
 
+    public int removeLast() {
+        if(size == 0) {
+            System.out.println("Linked List is empty");
+            return Integer.MIN_VALUE;
+        } else if(size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        //prev : i = size - 2
+        Node prev = head;
+        for(int i=0;i<size-2;i++) {
+            prev = prev.next;
+        }
+        int val = prev.next.data;
+        prev.next = null;
+        tail = prev;
+        size--;
+        return val;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();   
         ll.print();
@@ -105,6 +133,8 @@ public class LinkedList {
         ll.add(2,9);
         ll.print();
         ll.removeFirst();
+        ll.print();
+        ll.removeLast();
         ll.print();
 
         // System.out.println(ll);

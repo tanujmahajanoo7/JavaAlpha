@@ -64,7 +64,7 @@ public class LinkedList {
     public void add(int index, int data) {
         if(index == 0) {
             addFirst(data);
-            size++;
+            // size++;  //Doing in add first method
             return;
         }
         Node newNode = new Node(data);
